@@ -1,0 +1,263 @@
+header {
+    .container {
+        .header-left {
+            .logo {
+                a {
+                    img {
+                        width: 150px;
+                        @media (min-width: 375px) {
+                            width: 215px;
+                            height: 28px;
+                        }
+                    }
+                }
+            }
+        }
+        .header-right {
+            .navbar {
+                .menu {
+                    li {
+                        position: relative;
+                        display: inline-block;
+                        margin-right: 35px;
+                        @media (min-width: 1200px) {
+                            margin-right: 60px;
+                        }
+                        &:last-child {
+                            margin-right: 25px;
+                        }
+                        &:hover {
+                            a {
+                                .bottom-line {
+                                    &::after {
+                                        @extend %active;
+                                        width: 100%;
+                                    }
+                                    
+                                }
+                            }
+                        }
+                        a {
+                            color: $black-2;
+                            @extend %menu-item;
+                            font-weight: 500;
+                            padding: 40px 0;
+                            .bottom-line:not(.not-active) {
+                                position: relative;
+                                &::after {
+                                    @extend %active;
+                                }
+                                &.active {
+                                    &::after {
+                                        width: 100%;
+                                    } 
+                                }
+                            }
+                        }
+                        .submenu {
+                            height: 0;
+                            @include PositionL(100%,0,99999);
+                            background-color: $white;
+                            box-shadow: 0 5px 5px 0 $black-5-opacity;
+                            width: 210px;
+                            @include Transition(all,.4s,ease-out);
+                            li {
+                                display: none;
+                                margin-right: 0;
+                                @include Transition(all,.4s,ease-out);
+                                
+                                a {
+                                    display: block;
+                                    text-transform: capitalize;
+                                    padding: 8px 26px;
+                                    @extend %header-text;
+                                    letter-spacing: 0;
+                                    &:hover {
+                                        .bottom-line {
+                                            &::after {
+                                                @extend %active;
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                    .bottom-line:not(.not-active) {
+                                        position: relative;
+                                        &::after {
+                                            @extend %active;
+                                        }
+                                        &.active {
+                                            &::after {
+                                                width: 100%;
+                                            } 
+                                        }
+                                    }
+                                    &.dropdown-list {
+                                        position: relative;
+                                        i {
+                                            @include PositionR(50%,20px);
+                                            transform: translateY(-50%); 
+                                            font-size: 12px;
+                                            color: $light-gray-1;
+                                        }
+                                    }
+                                    &.dropdown-list + .dropdown-sub-submenu {
+                                        opacity: 0;
+                                        @include PositionL(-19px,100%);
+                                    }
+                                }
+                                &:hover {
+                                    .dropdown-list + .dropdown-sub-submenu {
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                            &.mega-menu {
+                                width: 1320px;
+                                left: -685px;
+                                padding: 0;
+                                li {
+                                    width: 25%;
+                                    padding: 0 52px;
+                                    h4 {
+                                        margin-bottom: 24px;
+                                        font-size: 22px;
+                                        font-weight: 500;
+                                        color: $black-2;
+                                    }
+                                    .sub-submenu {
+                                        li {
+                                            text-align: start;
+                                            width: 100%;
+                                            margin: 0;
+                                            padding: 0;
+                                            a {
+                                                display: inline-block; 
+                                                @extend %header-text;
+                                                padding: 8px 0;
+                                                text-transform: capitalize;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &:hover {
+                            .submenu {
+                                height: auto;
+                                padding: 19px 0;
+                                li {
+                                    display: block;
+                                }
+                                &.mega-menu {
+                                    display: flex;
+                                    padding: 40px 0 45px;
+                                }
+                            }
+                        }
+                    }
+                }
+                .search {
+                    .dropdown {
+                        position: relative;
+                        button {
+                            background-color: transparent;
+                            border: none;
+                            margin-left: 15px;
+                            @media (min-width: 1200px) {
+                                margin-left: 29px;
+                            }
+                            i {
+                                font-size: 19px;
+                                @include Transition(color,.2s,ease-out);
+                                @extend %hover;
+                            }
+                            &::after {
+                                content: none;
+                            }
+                        }
+                        .dropdown-menu {
+                            padding: 0 !important;
+                            margin: 0 !important;
+                            border: none;
+                            @include PositionL(76px,-240px);
+                            input {
+                                position: relative;
+                                padding: 16px 20px 17px;
+                                width: 300px;
+                                background-color: $white;
+                                border: none;
+                                color: $light-gray-2;
+                            }
+                            i {
+                                @include PositionR(50%,30px,999999);
+                                transform: translateY(-50%) rotate(90deg);
+                                cursor: pointer;
+                                color: $light-gray-5;
+                                font-size: 15px;
+                            }
+                        }
+                    } 
+                }
+                .shopping {
+                    .shopping-bag {
+                        display: inline-block;
+                        position: relative;
+                        .cart {
+                            &:hover + .shopping-bag-info {
+                                display: block;
+                            }
+                            button {
+                                background-color: transparent;
+                                border: none;
+                                margin-left: 20px;
+                                span {
+                                    top: 7px;
+                                    left: 100%;
+                                    right: 15px;
+                                    padding: 1px 2px;
+                                    width: 13px;
+                                    height: 13px;
+                                    background-color: $red-orange;
+                                    font-size: 8px;
+                                    color: $white;
+                                    font-weight: 600;
+                                    text-align: center;
+                                    line-height: 1.5;
+                                }
+                            }
+                            .cart-text {
+                                display: inline-block;
+                                margin-left: 15px;
+                                color: $black-2;
+                                letter-spacing: 1px;
+                                font-size: 12px;
+                                font-weight: 500;
+                            }
+                        }
+                        .shopping-bag-info {
+                            display: none;
+                            @include PositionL(76px,auto,999999);
+                            right: 0;
+                            z-index: 1000;
+                            width: 245px;
+                            background-color: $white;
+                            border: 1px solid $white-6;
+                            text-align: left;
+                            padding: 23px 20px;
+                            li {
+                                @extend %header-text;
+                            }
+                        }
+                    }
+                }
+            }
+            .hamburger-menu {
+                padding: 23px 0;
+                svg {
+                    @include Transition(color,.2s,ease-out);
+                    @extend %hover;
+                }
+            }
+        }
+    }
+}

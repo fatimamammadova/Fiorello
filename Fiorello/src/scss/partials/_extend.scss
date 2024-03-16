@@ -1,0 +1,193 @@
+%menu-item {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+%submenu-item {
+    display: inline-block;
+    font-family: Montserrat,sans-serif;
+    color: #8b8b8b;
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+%category {
+    color: #1b1b1b;
+    font-size: 12px;
+    font-weight: 500;
+    transition: color .2s ease-out;
+    &:hover {
+        color: #f34f3f;
+    }
+    &.active {
+        color: #f34f3f;
+    }
+}
+.next-button {
+    @media (min-width: 1024px) {
+        display: inline-block;
+    }
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    z-index: 9999;
+    width: 50px;
+    height: 24px;
+    cursor: pointer;
+    display: none;
+    .next-icon {
+        background-color: #b5b0b0;
+        display: inline-block;
+        width: 50px;
+        height: 1px;
+        position: relative;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 9px;
+            height: 100%;
+            bottom: 1px;
+            left: 100%;
+            background: #b5b0b0;
+            transform: rotate(139deg);
+            transform-origin: 0 100%;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            width: 9px;
+            height: 100%;
+            left: 100%;
+            background: #b5b0b0;
+            transform: rotate(225deg);
+            transform-origin: 0 100%;
+        }
+    }
+    &:hover {
+        .next-icon {
+            background-color: #000;  
+            &::after {
+                background-color: #000;
+            }
+            &::before {
+                background-color: #000;
+            }
+        }
+    }
+
+}
+.prev-button {
+    @media (min-width: 1024px) {
+        display: inline-block;
+    }
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: 9999;
+    width: 50px;
+    height: 24px;
+    cursor: pointer;
+    display: none;
+    .prev-icon {
+        position: relative;
+        background-color: #b5b0b0;
+        display: inline-block;
+        width: 50px;
+        height: 1px;
+        &:after {
+            content: '';
+            position: absolute;
+            width: 9px;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            background: #b5b0b0;
+            transform: rotate(321deg);
+            transform-origin: 0 100%;
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            width: 9px;
+            height: 100%;
+            bottom: 0;
+            left: 0;
+            background: #b5b0b0;
+            transform: rotate(42deg);
+            transform-origin: 0 100%;
+        }
+    }
+    &:hover {
+        .prev-icon { 
+            background-color: #000;  
+            &::after {
+            background-color: #000;
+            }
+            &::before {
+            background-color: #000;
+            }
+        }
+    }
+}
+%header-text {
+    color: #737373;
+    font-size: 13px;
+    font-weight: 500;
+}
+%hover {
+    &:hover {
+        color: #f34f3f;
+    }
+}
+%button {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #f34f3f;
+    border: 1px solid #f34f3f;
+    cursor: pointer;
+    @include Transition(background-color,.3s,ease);
+    &:hover {
+        background-color: #ff3d2a;
+    }
+}
+%active {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #0e0e0e;
+    @include Transition(width,.2s,ease-in-out);
+}
+.main-item {
+    @extend %menu-item;
+    padding: 11px 0;
+    font-weight: 500;
+    color: #0e0e0e;
+}
+.secondary-item {
+    @extend %menu-item;
+    padding: 11px 0;
+    font-family: Montserrat,sans-serif;
+    font-weight: 400;
+    color: #8b8b8b;
+}
+.submenu-item {
+    @extend %submenu-item;
+    padding: 4px 0;
+}
+.sub-submenu {
+    li {
+        a {
+            @extend .submenu-item;
+        }
+    }
+}
+
+

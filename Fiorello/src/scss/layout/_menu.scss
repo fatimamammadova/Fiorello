@@ -1,0 +1,44 @@
+#mobile-menu {
+    position: relative;
+    .mobile-menu {
+        padding: 56px 51px 80px 75px;
+        box-shadow: 0 1px 23.28px 0.72px $pink-black;
+        overflow: scroll;
+        .xmark {
+            @include PositionR(20px,20px);
+        }
+        .menu-content {
+            .accordion-menu {
+                i {
+                    color: $light-gray-2;
+                    font-size: 12px;
+                }
+            }
+            ul {
+                li {
+                    a {
+                        .bottom-line:not(.not-active) {
+                            position: relative;
+                            &::after {
+                                @extend %active;
+                            }
+                            &.active {
+                                &::after {
+                                    width: 100%;
+                                } 
+                            }
+                        }
+                        &:hover {
+                            .bottom-line {
+                                &::after {
+                                    @extend %active;
+                                    width: 100%;
+                                }                        
+                            }
+                        } 
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@import "./common/common";
+
+@import "./partials/mixin";
+@import "./partials/extend";
+@import "./partials/variables";
+@import "./partials/animation";
+
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/menu";
+
+@import "./pages/home";
+@import "./pages/about";
+@import "./pages/contact";
+

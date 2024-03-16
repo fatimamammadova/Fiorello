@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+::selection {
+    background: #f34f3f;
+    color: #fff;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 19px;
+    font-weight: 400;
+}
+p {
+    font-family: 'Lora', serif;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+.red-text {
+    color: #f34f3f;
+}
+button {
+    background-color: transparent;
+    border: none;
+}
+input:focus {
+    outline: 0;
+}

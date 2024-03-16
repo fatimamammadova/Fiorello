@@ -1,0 +1,98 @@
+#contact {
+    padding: 120px 0;
+    .contact-card {
+        .card-inner {
+            @media (min-width: 576px) {
+                padding: 50px;
+            }
+            background-color: $bg-white-3;
+            text-align: center;
+            padding: 40px 20px;
+            .card-img {
+                margin-bottom: 17px;
+                img {
+                    width: 154px;
+                    height: 154px;
+                }
+            }
+            .card-content {
+                .card-title {
+                    font-size: 30px;
+                    font-weight: 400;
+                    color: $gray-2;
+                    line-height: 1.4;
+                    margin-bottom: 19px;
+                    @media (min-width: 768px) {
+                        font-size: 38px;
+                    }
+                }
+                .card-text {
+                    margin-top: 29px;
+                    color: $light-gray-2;
+                    line-height: 1.6;
+                }
+            }
+            .name-img {
+                margin-top: 42px;
+                img {
+                    width: 197px;
+                    height: 56px;
+                }
+            }
+        }
+    }
+    .contact-form {
+        @media (min-width: 1200px) {
+            margin-top: 0;
+        }
+        margin-top: 30px;
+        .form-inner {
+            @media (min-width: 1200px) {
+                padding: 2px 0 0 35px;
+            }
+            .form-content {
+                .form-title {
+                    font-size: 30px;
+                    font-weight: 400;
+                    color: $gray-2;
+                    line-height: 1.4;
+                    margin-bottom: 19px;
+                    @media (min-width: 768px) {
+                        font-size: 38px;
+                    }
+                }
+                .form-texts {
+                    color: $light-gray-2;
+                    line-height: 1.6;
+                    margin-bottom: 32px;
+                }
+            }
+            form {
+                input {
+                    display: block;
+                    width: 100%;
+                    margin: 0 0 15px;
+                    padding: 19px 18px;
+                    color: $light-gray-4;
+                    font-size: 12px;
+                    background-color: $white;
+                    border: 1px solid $gray-white;
+                }
+                textarea {
+                    width: 100%;
+                    height: 130px;
+                    margin: 0 0 15px;
+                    padding: 19px 18px;
+                    color: $light-gray-4;
+                    font-size: 12px;
+                    background-color: #ffffff;
+                    border-color: $gray-white;
+                }
+                button {
+                    padding: 20px 42px;
+                    @extend %button;
+                }
+            }
+        }
+    }
+}

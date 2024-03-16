@@ -1,0 +1,38 @@
+@mixin Flex($f-dir:null,$a-items:null,$j-cont:null) {
+    display: flex;
+    flex-direction: $f-dir;
+    align-items: $a-items;
+    justify-content: $j-cont;
+}
+
+@mixin Background($position:null,$size:null,$attach:null) {
+    background-repeat: no-repeat;
+    background-position: $position;
+    background-size: $size;
+    background-attachment: $attach;
+}
+
+@mixin PositionL($top:null,$left:null,$z-index:null) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    z-index: $z-index;
+}
+
+@mixin PositionR($top:null,$right:null,$z-index:null) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    z-index: $z-index;
+}
+
+@mixin Absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin Transition($proper:null,$dur:null,$t-func:null) {
+    transition: $proper $dur $t-func;
+}

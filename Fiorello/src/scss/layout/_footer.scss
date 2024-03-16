@@ -1,0 +1,90 @@
+footer {
+    background-color: $white-3;
+    .footer-inner {
+        .footer-top {
+            padding: 73px 0;
+            .footer-col {
+                &:not(:first-child) {
+                    margin-top: 30px;
+                    @media (min-width: 1200px) {
+                        margin-top: 0;
+                    }
+                }
+                @media (min-width: 992px) and (max-width: 1200px) {
+                    margin-top: 30px;
+                }
+                .column {
+                    width: 80%;
+                    @media (min-width: 992px) {
+                        margin: 0;
+                    }
+                    .footer-title {
+                        margin-bottom: 23px;
+                        h6 {
+                            font-family: 'Montserrat',sans-serif;
+                            font-size: 12px;
+                            font-weight: 500;
+                            letter-spacing: 1px;
+                            color: $black;
+                        }
+                    }
+                    .footer-menu {
+                        ul {
+                            li {
+                                padding-bottom: 3px;
+                                a {
+                                    color: $light-gray-3;
+                                    font-size: 12px;
+                                    @include Transition(color,.2s,ease-out);
+                                    @extend %hover;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .footer-bottom {
+            border-top: 1px solid $white-4;
+            padding: 8px 0 17px;
+            .footer-bottom-column {
+                padding: 16px 16px 0;
+                &.column-1 {
+                    text-align: center;
+                    @media (min-width: 992px) {
+                        text-align: left;
+                    }
+                    p {
+                        font-family: 'Montserrat', sans-serif;
+                        font-size: 12px;
+                        color: $light-gray-6;
+                        a {
+                            color: $light-gray-2;
+                        }
+                    }
+                }
+                &.column-2 {
+                    text-align: center;
+                }
+                &.column-3 {
+                    text-align: center;
+                    a {
+                        display: inline-block;
+                        span {
+                            margin-left: 25px;
+                            color: $light-gray-6;
+                            display: inline-block;
+                            font-size: 10px;
+                            letter-spacing: 1px;
+                            @include Transition(color,.2s,ease-out);
+                            @extend %hover;
+                        }
+                    }
+                    @media (min-width: 992px) {
+                        text-align: end;
+                    }
+                }
+            }
+        }
+    }
+}
